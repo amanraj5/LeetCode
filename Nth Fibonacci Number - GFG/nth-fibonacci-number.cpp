@@ -7,20 +7,24 @@ using namespace std;
 // User function Template for C++
 class Solution {
   public:
-    int nthFibonacci(int n){
-        // code here
-        int N=1000000007;
-        if(n==0) return 0;
-        if(n==1) return 1;
-        long long int a=0,b=1,c;
-        for(int i=2;i<=n;i++){
-            c=(a+b)%N;
-            a=b;
-            b=c;
-        }
-        return b%N;
-        
+  int N = 1000000007;
+
+    int nthFibonacci(int n) {
+    if (n <= 1) {
+        return n;
     }
+
+    int dp[n + 1];
+    dp[0] = 0;
+    dp[1] = 1;
+
+    for (int i = 2; i <= n; i++) {
+        dp[i] = (dp[i - 1] + dp[i - 2]) % N;
+    }
+
+    return dp[n];
+}
+
 };
 
 //{ Driver Code Starts.
