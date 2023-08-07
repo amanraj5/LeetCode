@@ -18,7 +18,8 @@ class Solution {
             a=b;
             b=c;
         }
-        return c%N;
+        return b%N;
+        
     }
 };
 
