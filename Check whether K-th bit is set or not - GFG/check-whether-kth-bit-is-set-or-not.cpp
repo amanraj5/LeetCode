@@ -17,8 +17,7 @@ class Solution
     {
         // Your code here
         // It can be a one liner logic!! Think of it!!
-        if((n&(1<<k))!=0) return true;
-        return false;
+        return (n&(1<<k));
     }
 };
 
